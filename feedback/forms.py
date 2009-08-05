@@ -2,7 +2,7 @@
 from django import forms
 from models import Message,Customer
 
-noname = '一个不愿透露姓名的家伙'
+noname = u'\u4e00\u4e2a\u4e0d\u613f\u900f\u9732\u59d3\u540d\u7684\u5bb6\u4f19'
 
 class MessageForm(forms.Form):
     content = forms.CharField(required=False)
