@@ -1,0 +1,30 @@
+﻿{% extends "base.html" %}
+{%block page%}
+<div id="page">
+    <div id="header">
+	<h2> {{dailys.0.date|date:"Y年n月"}}的所有日志 </h2>
+    </div>
+    <div class="cap"></div>
+    {% for daily in dailys %}
+    <div class="daily">
+    <div class="dailyheader">
+    <a href={{daily.url}}><h2>{{daily.title}}</h2></a>
+    <h4>{{daily.date|date:"Y年 n月 j日 l"}}<h5>有{{daily.count}}条留言</h5></h4>
+    </div>
+    </div>
+    {% endfor %}
+    <script type="text/javascript">
+  $('#daily').addClass('select');
+  $('#years .select').removeClass('select');
+  $(".year[name='y{{dailys.0.date.year}}']").addClass('select');
+  $(".month[name='m{{dailys.0.date|date:"Y-m"}}']").addClass('select');
+  $('#y{{dailys.0.date.year}}').css('display','block');
+  $('#midbar').css('display','block');
+  $('#m{{dailys.0.date|date:"Y-m"}}').css('display','block');
+  $('#rightbar').css('display','block');
+    </script>
+
+    <div class="footer"></div>
+</div>
+
+{%endblock%}

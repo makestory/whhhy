@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%block page%}
+<div id="page">
+    <div class="cap"></div>
+<div class="messages">
+     <h3>大家的留言</h3>
+{% for message in messages %}
+<div class="message">
+    <div class="info">
+        <div class="header">
+        <p class="name">{{message.customer.name}} 说: </p>
+        <span class="time">{{message.date|date:"Y.n.j H:i"}}</span>
+        </div>
+        <div class="counter">
+             {%if message.at.date%}<span class="at"> 在<a href='{{message.at.url}}'>{{message.at.date|date:"y年n月j日"}}的日志</a>中</span>{%endif%} 
+        </div>
+    </div>
+    
+    <div class="say">
+    <p>{{message.content|linebreaksbr}}</p>
+    
+    </div>
+</div>
+{% endfor %}
+</div>
+{% include "errors.html" %}
+{% include "form.html" %}
+    <div class="footer"></div>
+</div>
+{%endblock%}

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Whhhy</title>
+    <link>http://</link>
+    <description>makestory的胡思乱想</description>
+    <language>zh-CN</language>
+    <pubDate>{{dailys.last.date}}</pubDate>
+    <lastBuildDate>Tue, 10 Jun 2003 09:41:01 GMT</lastBuildDate>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>Weblog Editor 2.0</generator>
+    <managingEditor>editor@example.com</managingEditor>
+    <webMaster>webmaster@example.com</webMaster>
+    {%for daily in dailys%}
+    <item>
+      <title>{{daily.title}}</title>
+      <link>http://127.0.0.1/daily/{{daily.date|date:"Ymd"}}</link>
+      <description>{{daily.text}}</description>
+      <pubDate>{{daily.date|date:"Ymd"}}</pubDate>
+    </item>
+    {%endfor%}
+  </channel>
+</rss>

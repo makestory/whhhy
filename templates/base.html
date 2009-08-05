@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+<title>Whhhy</title>
+<link type="application/rss+xml" title="Healich" rel="alternate" href="/rss/"/>
+<link href="/data/base.css" type="text/css" rel="stylesheet"/>
+<style type="text/css" >
+    .full {width: 100%; height:100%; display: table}
+    .pos { display: table-cell;vertical-align: middle;-vertical-align: baseline}
+    *+html .pos{vertical-align: baseline}
+</style>
+<!--[if IE  ]>
+<style type="text/css">
+html{overflow:hidden;}
+body{height:100%;overflow:auto;}
+.fixed{position:absolute;top:0;}
+.full {position: relative; }
+.pos { position: absolute; top:50%}
+.mid { position: relative; top:-50% }
+</style>
+<![endif]-->
+<script src="/data/jquery.js"  type="text/javascript"></script>
+<script src="/data/base.js"  type="text/javascript"></script>
+
+<!--[if !IE]><!--> 
+<script type="text/javascript">
+function ajaxsend(){
+    $('#error').remove(); 
+    $.ajax({
+        url:'/ajax/',
+        type: 'POST',
+        dataType:'xmlDoc',
+        data:{name:$("#id_name").val(),content:$("#id_content").val(),email:$("#id_email").val(),},
+        success: function(xmlDoc){
+        $('#messages').append(xmlDoc);
+        $('.message:last').animate({ height: 'show' });
+        
+        },
+        });
+        return false;};
+$(document).ready(function(){
+    $("#feedback").submit(ajaxsend);
+     });
+</script>
+<!--<![endif]-->
+</head>
+
+<body {% if wallpaper.0 %}style="background:url({{wallpaper.0.image.url}}) fixed;" {% endif %}>
+
+<div id="leftbar" class="fixed">
+    <a href="/"><img id="logo" src="/data/smalllogo.png" alt="logo" /></a>
+<ul id="menu">
+   <li><a id="daily" >日志</a></li>
+   <li><a href="/feedback/">留言</a></li>
+   <li><a href="/about/">关于</a></li>
+</ul>
+</div>
+
+ <div id="midbar" class="fixed">
+    <div id="yearbar">
+      <ul id="years">
+      {% for year in years%}  <li><a class="year" name="y{{year|date:"Y"}}">{{ year|date:"Y"}}年</a></li>{% endfor%}
+      </ul>
+    </div>
+    <div id="midback">
+       </div>
+    <div id="monthbar">
+       {% for year in years%} 
+       <ul id="y{{ year|date:"Y"}}" class="months">
+       {% for month in months %}
+       {% ifequal month.year year.year %}
+       <li><a class="month" name="m{{month|date:"Y"}}-{{month|date:"m"}}">{{month|date:"b"}}</a></li>
+       {%endifequal%}
+       {% endfor%}
+       </ul>
+       {%endfor%}
+    </div>
+</div>
+
+<div id="rightbar"  class="fixed">
+    <div class="full"><div class="pos"><div id="days" class="mid">
+    {% for month in months %}
+    <ul id="m{{month|date:"Y"}}-{{month|date:"m"}}" class="day">
+    {% for day in days %}{% ifequal day.year month.year %}{% ifequal day.month month.month %}
+    <li><a id="d{{day|date:"Ymd"}}" href="/daily/{{day|date:"Y-m-d"}}">{{day|date:"j"}}日</a></li>
+    {%endifequal%}{%endifequal%}{% endfor%}
+    </ul>
+    {% endfor%}
+    </div></div></div>
+</div>
+
+{%block page%}
+{%endblock%}
+</body>
+</html>

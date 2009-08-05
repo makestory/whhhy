@@ -1,0 +1,52 @@
+﻿{% extends "base.html" %}
+{%block page%}
+<div id="page">
+    <div class="cap"></div>
+    <div class="daily">
+    <div class="dailyheader">
+    <h2>{{daily.title}}</h2>
+    <h4>{{daily.date|date:"Y年 n月 j日 l"}}</h3>
+    </div>
+    <div class="dailycontent">
+    {{daily.text|safe}}
+    </div>
+    </div>
+    <script type="text/javascript">
+  $('#daily').addClass('select');
+  $('#years .select').removeClass('select');
+  $(".year[name='y{{daily.date.year}}']").addClass('select');
+  $(".month[name='m{{daily.date|date:"Y-m"}}']").addClass('select');
+  $('#d{{daily.date|date:"Ymd"}}').addClass('select');
+  $('#y{{daily.date.year}}').css('display','block');
+  $('#midbar').css('display','block');
+  $('#m{{daily.date|date:"Y-m"}}').css('display','block');
+  $('#rightbar').css('display','block');
+    </script>
+
+<div class="messages">
+    <h3>大家的留言</h3>
+{% for message in messages %}
+<div class="message">
+    <div class="info">
+        <div class="header">
+        <p class="name">{{message.customer.name}}  说: </p>
+        <p class="time">{{message.date|date:"Y.n.j H:i"}}</p>
+        </div>
+        <div class="counter">
+        <span class="number">{{forloop.counter}}</span>#
+        </div>
+    </div>
+    <div class="say">
+    <p>{{message.content|linebreaksbr}}</p>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+{% include "errors.html" %}
+{% include "form.html" %}
+
+    <div class="footer"></div>
+</div>
+
+{%endblock%}

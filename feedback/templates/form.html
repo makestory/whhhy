@@ -1,0 +1,22 @@
+<form method="post" action="#feedback" id="feedback">
+    <div id="topfield" class="field">
+        <p><label for="id_content">+留言</label></p>
+        <textarea  id="id_content" name="content"  rows="6" cols="60">{{wrong.content}}</textarea>
+    </div>
+    <div id="midfield" class="field"> 
+    </div>
+    <div id="bottomfield" class="field">
+        <div id="showsign">
+            <span>我要留名</span>
+        </div>
+        <div id="sign">
+            <label for="id_name">称呼</label>
+            <input type="text"  maxlength="14" name="name" id="id_name" value="{{wrong.name}}" />
+            <label for="id_email">邮箱</label>
+            <input type="text" id="id_email" name="email" value="{{wrong.email}}" />
+        </div>
+        <div id="submit">
+            <input id="sub" type="submit" value="写好啦!"/>
+        </div>
+    </div>
+</form> 

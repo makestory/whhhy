@@ -1,0 +1,86 @@
+div,ing,li,p,a,span,ul,body{padding:0;margin:0;}
+html{height:100%;font-family:微软雅黑;}
+.fixed{position:fixed;}
+body{background:#40d0d0;}
+
+#leftbar{background:url(/data/black.png);-background:black;width:128px;height:100%;color:white;left:30px;}
+#logo{margin-top:20px;border:none;margin-bottom:48px;}
+#menu{width:100%;margin-top:50px;}
+#menu li{width:100%;text-align:right;list-style:none;}
+#menu a{display:block;width:111px;height:30px;line-height:30px; color:white;text-decoration:none;padding-right:17px;cursor:pointer;}
+#menu a:hover{background:url(/data/snow.png);color:black;}
+#menu .select{background:url(/data/snow.png);color:black;}
+#menu .hover{background:url(/data/snow.png);color:black;}
+
+#midbar{width:74px;height:100%;background:url(/data/snow.png);left:158px;display:none;}
+#midback{position:relative;left:42px;width:32px;height:24px;background:url(/data/midback.png);cursor:pointer;top:10px;}
+
+#monthbar{width:74px;position:relative;top:19px;display:block;}
+.months {display:none;}
+.months li{width:100%;text-align:right;list-style:none;display: inline;}
+.month{display:block;width:74px;font-size:12px;height:22px;line-height:22px;color:#404040;text-decoration:none;text-align:center;padding-right:0;cursor:pointer;}
+.month:hover{background:url(/data/gray.png);color:white;}
+.months .hover{background:url(/data/gray.png);color:white;}
+.months .select{background:url(/data/gray.png);color:white;}
+
+#yearbar{width:74px;position:relative;height:244px;display:table;}
+#years {-position:absolute;bottom:0;display: table-cell;vertical-align:bottom;}
+*+html #years{position:absolute;}
+#years li{width:74px;text-align:right;list-style:none;}
+.year{display:block;width:100%;font-size:14px;height:24px;line-height:24px;color:#404040;text-decoration:none;text-align:center;padding-right:0;cursor:pointer;}
+.year:hover{background:white;color:#0066ff}
+#years .select{color:#0066ff}
+
+#rightbar{width:46px;height:100%;background:url(/data/gray.png);left:232px;display:none}
+.day {display:none;width:46px;}
+.day li{width:46px;text-align:center;list-style:none;display: inline;}
+.day a{display:block;width:100%;font-size:12px;font-family:宋体;height:18px;line-height:18px;color:white;text-decoration:none;text-align:center;}
+.day a:hover{background:url(/data/snow.png);color:black;}
+.day a.select{background:url(/data/snow.png);color:black;}
+
+#page{margin-left:300px;width:666px;height:auto;height:auto;top:0}
+
+#header{background:url(/data/salt.png);padding:5px}
+#header h2{margin-left:20px;color:#303030}
+.cap{height:10px;}
+.daily{background:url(/data/salt.png);margin-bottom:12px;padding:20px 30px 20px 30px;width:606px;}
+.dailyheader h5{text-align:right;display:inline}
+.dailyheader a {text-decoration:none;color:black}
+.dailyheader a:hover{text-decoration:none;color:#0066FF}
+h4{margin:10px 0 10px 0;color:#606060;font-family:sans-serif;}
+.daily h2{margin:10px 0 10px;font-family:sans-serif;}
+.dailycontent{line-height:24px;margin-top:15px;border-top:solid 1px #808080;padding-top:20px}
+.dailycontent a{text-decoration:none;color:#0066FF}
+
+.messages{background:url(/data/sugar.png);-background:#c0c0c0;margin-bottom:12px;width:646px;padding:10px;}
+.messages h3{margin:10px 20px 10px 10px;color:#303030;}
+
+.message{background:url(/data/sugar.png);margin-top:10px;padding:20px 20px 20px 20px;;width:606px;}
+.message span{}
+.info{border-bottom:solid 1px #808080;height:40px;margin-bottom:10px;}
+.header{float:left;width:400px;font-size:15px;}
+.counter{float:right;width:200px;text-align:right}
+.number{font-size:28px;font-family:"times new roman",serif;font-style:italic}
+.time{font-style: italic;font-family:sans-serif;font-size:14px;color:#505050}
+.say{font-size:16px;line-height:24px;padding:0 20px 0 20px;}
+.say a{text-decoration:none;}
+.say img {border:none}
+.at{font-size:12px;font-family:serif;padding:24px 10px 0 0;display:block}
+.at a{text-decoration:none;color:#0066ff}
+
+
+#error{width:626px;height:auto;background:#990000;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
+.errorlist li{list-style-type:none}
+
+#feedback{background:url(/data/salt.png);padding:20px;width:626px;display:block;height:200px;}
+#id_content{font-size:16px;width:623px;height:125px;}
+#id_email,#id_name{width:200px;margin-right:20px;}
+#sub{background: transparent;border:1px solid #606060;color:black;width:80px;padding:0;line-height:26px;height:26px;margin-right:10px;font-size:13px;font-weight:bold;cursor:pointer;}
+#sub:hover{background: black;border:1px solid white;color:white}
+#midfield{height:20px;}
+#showsign{background: url(/data/showsign.png) no-repeat;float:left;font-size:15px;height:24px;cursor:pointer;}
+#showsign span{margin-left:20px;}
+#sign{float:left;display:none;}
+#submit{float:right}
+
+.footer{height:15px;}

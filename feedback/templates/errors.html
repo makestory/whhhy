@@ -1,0 +1,8 @@
+{% if form.errors or repeat%}
+<div id="error">
+    {% if repeat %}<p>不要连续发重复内容</p>{%endif%}
+        <p>{{form.content.errors}}</p>
+        <p>{{form.email.errors}}</p>
+        <p>{{form.name.errors}}</p>
+</div>
+{% endif%}

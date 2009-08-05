@@ -1,0 +1,20 @@
+{%if ok%}
+<div class="message" style="display:none">
+    <div class="info" >
+        <div class="header" >
+        <p class="name">{{message.customer.name}}  说: </p>
+        <p class="time">{{message.date|date:"Y.n.j H:i"}}</p>
+        </div>
+        {% if message.at.date %}
+        <div class="counter">
+        <span class="number">{{number}}</span>#
+        </div>
+        {% endif %}
+    </div>
+    <div class="say">
+    <p>{{message.content|linebreaksbr}}</p>
+    </div>
+    <script> $('#id_content').val("");</script>
+</div>
+{%endif%}
+{% include "errors.html" %}
