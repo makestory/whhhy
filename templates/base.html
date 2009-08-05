@@ -33,7 +33,7 @@ function ajaxsend(){
         dataType:'xmlDoc',
         data:{name:$("#id_name").val(),content:$("#id_content").val(),email:$("#id_email").val(),},
         success: function(xmlDoc){
-        $('#messages').append(xmlDoc);
+        $('.messages').append(xmlDoc);
         $('.message:last').animate({ height: 'show' });
         
         },
@@ -44,6 +44,7 @@ $(document).ready(function(){
      });
 </script>
 <!--<![endif]-->
+
 </head>
 
 <body {% if wallpaper.0 %}style="background:url({{wallpaper.0.image.url}}) fixed;" {% endif %}>
