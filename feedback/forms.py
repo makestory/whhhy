@@ -2,6 +2,8 @@
 from django import forms
 from models import Message,Customer
 
+noname = '一个不愿透露姓名的家伙'
+
 class MessageForm(forms.Form):
     content = forms.CharField(required=False)
     name = forms.CharField(max_length=10,required=False)
@@ -15,13 +17,13 @@ class MessageForm(forms.Form):
     def clean_name(self):
         name = self.cleaned_data.get('name').strip()
         if name=='':
-                name='一个不愿透露姓名的家伙'
+                name = noname
         return name
     
     def clean_email(self):
         email = self.cleaned_data.get('email')
-        name = self.cleaned_data.get('name','').strip()
-        if name =='一个不愿透露姓名的家伙':
+        name = self.cleaned_data.get('name',u'').strip()
+        if name == noname:
             email='unknow@whhhy.com'
         if email=='':
             raise forms.ValidationError("如果您要留名的话请输入邮箱地址")
