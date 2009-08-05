@@ -20,16 +20,12 @@ class MessageForm(forms.Form):
     
     def clean_email(self):
         email = self.cleaned_data.get('email')
-        
-        try:
-            name = self.cleaned_data.get('name').strip()
-            if name =='一个不愿透露姓名的家伙':
-                email='unknow@whhhy.com'
-            if email=='':
-                raise forms.ValidationError("如果您要留名的话请输入邮箱地址")
-        except:
+        name = self.cleaned_data.get('name','').strip()
+        if name =='一个不愿透露姓名的家伙':
+            email='unknow@whhhy.com'
+        if email=='':
             raise forms.ValidationError("如果您要留名的话请输入邮箱地址")
-            return email
+     
         try:
             exist=Customer.objects.filter(name=name)[0]
         except:
