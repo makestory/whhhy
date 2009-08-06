@@ -13,7 +13,7 @@ class DailyViews(BaseView):
     def latest(cls,request):
         "This method redirect the page to latest daily"
         try:
-            date = str(Daily.objects.all()[0].date)
+            date = str(Daily.objects.filter(show=True).all()[0].date)
             return HttpResponseRedirect('/daily/%s' % date)
         except:
             raise Http404
@@ -25,7 +25,7 @@ class DailyViews(BaseView):
         para = BaseView().para
         year = int(date[0:4])
         month = int(date[5:7])
-        para['dailys'] = Daily.objects.filter(date__year=year,date__month=month)
+        para['dailys'] = Daily.objects.filter(date__year=year,date__month=month,show=True)
         return render_to_response(template,para)
 
     @classmethod
@@ -34,7 +34,7 @@ class DailyViews(BaseView):
         template ='daily.html'
         para = BaseView().para
         para['repeat'] = False
-        para['daily'] = Daily.objects.get(date=date)
+        para['daily'] = Daily.objects.filter(show=True).get(date=date)
         para['messages'] = para['daily'].message_set.order_by('date')
         if request.method == 'POST':
             form = MessageForm(request.POST)
