@@ -27,10 +27,11 @@ body{height:100%;overflow:auto;}
 <!--[if !IE]><!-->
 {% block ajax%}
 <script type="text/javascript">
+
 function ajaxsend(){
     $('#error').remove(); 
     $.ajax({
-        url:'/ajax/',
+        url:'/feedback/ajax/',
         type: 'POST',
         dataType:'xmlDoc',
         data:{name:$("#id_name").val(),content:$("#id_content").val(),email:$("#id_email").val(),},
@@ -42,6 +43,8 @@ function ajaxsend(){
         },
         });
         return false;};
+
+        
 $(document).ready(function(){
     $("#feedback").submit(ajaxsend);
      });

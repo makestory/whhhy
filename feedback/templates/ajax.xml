@@ -1,5 +1,5 @@
 {%if ok%}
-<div class="message" style="display:none">
+<div class="message" style="display:none" id="pk{{message.pk}}">
     <div class="info" >
         <div class="header" >
         <p class="name">{{message.customer.name}}  说: </p>
@@ -13,8 +13,21 @@
     </div>
     <div class="say">
     <p>{{message.content|linebreaksbr}}</p>
+      <button class="delete" title="删除留言" value="{{message.pk}}"></button> 
     </div>
-    <script> $('#id_content').val("");</script>
+    <script> $('#id_content').val("");$(document).ready(function(){$(".delete").click(
+ function (){$.ajax({
+        url:'/feedback/delete/',
+        type: 'POST',
+        dataType:'xmlDoc',
+        data:{pk:$(this).val()},
+        success: function(xmlDoc){
+        $('.messages').after(xmlDoc);
+        
+        },
+        });
+ }); 
+});</script>
 </div>
 {%endif%}
 {% include "errors.html" %}

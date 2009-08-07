@@ -1,5 +1,5 @@
 #coding=utf-8
-from django.http import Http404
+from django.http import Http404,HttpResponse
 from django.shortcuts import render_to_response
 from feedback.models import Message,Customer
 from feedback.forms import MessageForm
@@ -29,6 +29,13 @@ def ajax(request):
             return render_to_response('ajax.xml', {'form':form,'ok':False})
     else:
         return render_to_response('ajax.xml', {'ok':False})
+
+def delete(request):
+    pk = int(request.POST['pk'])
+    Message.objects.get(pk=pk).delete()
+    script ="<script> $('#pk%s').slideUp('slow')</script>" % pk
+    return HttpResponse(script)
+    
 
 
 class FeedbackViews(BaseView):

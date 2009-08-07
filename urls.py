@@ -10,7 +10,6 @@ urlpatterns = patterns('',
     (r'^data/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
     (r'^daily/', include('daily.urls')),
     (r'^feedback/', include('feedback.urls')),
-    (r'^ajax/$','feedback.views.ajax'),
     (r'^about/$',HomeView.about),
     (r'^admin/(.*)', admin.site.root),
     
