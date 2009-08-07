@@ -33,7 +33,7 @@ def ajax(request):
 def delete(request):
     pk = int(request.POST['pk'])
     Message.objects.get(pk=pk).delete()
-    script ="<script> $('#pk%s').slideUp('slow')</script>" % pk
+    script ="<script> $('#pk%s').slideUp()</script>" % pk
     return HttpResponse(script)
     
 

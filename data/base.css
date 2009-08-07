@@ -69,9 +69,12 @@ h4{margin:10px 0 10px 0;color:#606060;font-family:sans-serif;}
 .at a{text-decoration:none;color:#0066ff}
 .delete{display:block;background:url('/data/delete.png');width:16px;height:16px;padding:0;border:0;margin-left:560px;cursor:pointer;}
 
-#error{width:626px;height:auto;background:#990000;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
+#error{width:626px;height:auto;background:#900000;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
 .errorlist li{list-style-type:none}
 #sending{width:626px;height:auto;background:#10b010;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
+.delete_sure{width:626px;height:auto;background:#900000;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
+.sure{background:#b03030;width:60px;height:24px;border:none;color:white;cursor:pointer;}
+.unsure{background:#b03030;width:60px;height:24px;border:none;color:white;cursor:pointer;}
 
 #feedback{background:url(/data/sugar.png);padding:20px;width:626px;display:block;height:200px;}
 #id_content{font-size:16px;width:623px;height:125px;}

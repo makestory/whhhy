@@ -13,21 +13,26 @@
     </div>
     <div class="say">
     <p>{{message.content|linebreaksbr}}</p>
-      <button class="delete" title="删除留言" value="{{message.pk}}"></button> 
+    <button class="delete" title="删除留言" "></button> 
     </div>
-    <script> $('#id_content').val("");$(document).ready(function(){$(".delete").click(
- function (){$.ajax({
+</div>
+<div class="delete_sure" style="display:none" >
+    <p>确定要删除这条留言吗？ <button class="sure" value="{{message.pk}}"> 是 </button> <button class="unsure"> 否 </button></p>
+</div>
+<script> $('#id_content').val("");$(document).ready(function(){$(".delete").click(
+function (){$(this).parent().parent().next().slideDown()
+});
+$(".sure").click(function(){
+        $.ajax({
         url:'/feedback/delete/',
         type: 'POST',
         dataType:'xmlDoc',
         data:{pk:$(this).val()},
         success: function(xmlDoc){
-        $('.messages').after(xmlDoc);
-        
-        },
+        $('.messages').after(xmlDoc);}})
+        $(this).parent().parent().remove();
         });
- }); 
+$(".unsure").click(function(){$(this).parent().parent().slideUp()})
 });</script>
-</div>
 {%endif%}
 {% include "errors.html" %}
