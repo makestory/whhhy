@@ -1,6 +1,5 @@
 import os
 import socket
-# Django settings for xinyiloft project.
 
 if socket.gethostname() == 'noname':
     DEBUG = TEMPLATE_DEBUG = True
