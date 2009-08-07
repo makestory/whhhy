@@ -37,7 +37,7 @@ class FeedbackViews(BaseView):
         template='feedback.html'
         para=BaseView().para
         para['repeat']=False
-        para['messages'] = Message.objects.all()[:50].reverse()
+        para['messages'] = Message.objects.filter(show=True)[:30]
         if request.method == 'POST':
             form = MessageForm(request.POST)
             para['form']= form

@@ -1,7 +1,29 @@
 {% extends "base.html" %}
+{% block ajax %}
+<script type="text/javascript">
+function ajaxsend(){
+    $('#error').remove(); 
+    $.ajax({
+        url:'/ajax/',
+        type: 'POST',
+        dataType:'xmlDoc',
+        data:{name:$("#id_name").val(),content:$("#id_content").val(),email:$("#id_email").val(),},
+        success: function(xmlDoc){
+        $('.message:first').before(xmlDoc);
+        $('.message:first').animate({ height: 'show' });
+        },
+        });
+        return false;};
+$(document).ready(function(){
+    $("#feedback").submit(ajaxsend);
+     });
+</script>
+{% endblock %}
 {%block page%}
 <div id="page">
-    <div class="cap"></div>
+    {% include "form.html" %}
+    {% include "errors.html" %}
+     <div class="cap"></div>
 <div class="messages">
      <h3>大家的留言</h3>
 {% for message in messages %}
@@ -23,8 +45,7 @@
 </div>
 {% endfor %}
 </div>
-{% include "errors.html" %}
-{% include "form.html" %}
+
     <div class="footer"></div>
 </div>
 {%endblock%}

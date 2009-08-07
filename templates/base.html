@@ -24,7 +24,8 @@ body{height:100%;overflow:auto;}
 <script src="/data/jquery.js"  type="text/javascript"></script>
 <script src="/data/base.js"  type="text/javascript"></script>
 
-<!--[if !IE]><!--> 
+<!--[if !IE]><!-->
+{% block ajax%}
 <script type="text/javascript">
 function ajaxsend(){
     $('#error').remove(); 
@@ -44,6 +45,7 @@ $(document).ready(function(){
     $("#feedback").submit(ajaxsend);
      });
 </script>
+{% endblock %}
 <!--<![endif]-->
 
 </head>

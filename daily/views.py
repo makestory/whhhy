@@ -35,7 +35,7 @@ class DailyViews(BaseView):
         para = BaseView().para
         para['repeat'] = False
         para['daily'] = Daily.objects.filter(show=True).get(date=date)
-        para['messages'] = para['daily'].message_set.order_by('date')
+        para['messages'] = para['daily'].message_set.filter(show=True).order_by('date')
         if request.method == 'POST':
             form = MessageForm(request.POST)
             para['form'] = form
