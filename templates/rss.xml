@@ -13,7 +13,7 @@
     {%for daily in dailys%}
     <item>
       <title>{{daily.title}}</title>
-      <link>http://whhhy.com/daily/{{daily.date|date:"Ymd"}}</link>
+      <link>http://whhhy.com/daily/{{daily.date|date:"Y-m-d"}}</link>
       <description>{{daily.text}}</description>
       <pubDate>{{daily.date|date:"Ymd"}}</pubDate>
     </item>
