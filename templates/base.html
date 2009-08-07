@@ -34,10 +34,11 @@ function ajaxsend(){
         type: 'POST',
         dataType:'xmlDoc',
         data:{name:$("#id_name").val(),content:$("#id_content").val(),email:$("#id_email").val(),},
+        beforeSend:function(){$('.messages h3').after('<div id="sending"><p>正在发送……</p></div>');},
         success: function(xmlDoc){
         $('.messages').append(xmlDoc);
         $('.message:last').animate({ height: 'show' });
-        
+        $('#sending').remove()
         },
         });
         return false;};

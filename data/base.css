@@ -71,6 +71,7 @@ h4{margin:10px 0 10px 0;color:#606060;font-family:sans-serif;}
 
 #error{width:626px;height:auto;background:#990000;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
 .errorlist li{list-style-type:none}
+#sending{width:626px;height:auto;background:#10b010;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
 
 #feedback{background:url(/data/sugar.png);padding:20px;width:626px;display:block;height:200px;}
 #id_content{font-size:16px;width:623px;height:125px;}

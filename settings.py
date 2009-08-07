@@ -1,8 +1,12 @@
 import os
+import socket
 # Django settings for xinyiloft project.
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+if socket.gethostname() == 'noname':
+    DEBUG = TEMPLATE_DEBUG = True
+else:
+    DEBUG = TEMPLATE_DEBUG = False
+
 PATH = os.getcwd()
 
 if PATH[-1]=='/':
