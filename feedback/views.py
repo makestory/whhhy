@@ -36,18 +36,33 @@ def delete(request):
     script ="<script> $('#pk%s').slideUp()</script>" % pk
     return HttpResponse(script)
     
-
-
+def more(request):
+    page = int(request.POST['page'])
+    count = int(request.POST['count'])
+    para = {'more':page+1}
+    para['messages'] = Message.objects.filter(show=True)[page*20+count:page*20+20+count]
+    try:
+        Message.objects.filter(show=True)[page*20+20+count]
+    except:
+        para['more'] = False
+    return render_to_response('more.xml',para)
+    
+    
 class FeedbackViews(BaseView):
     @classmethod
     def feedback(self,request):
         template='feedback.html'
         para=BaseView().para
-        para['repeat']=False
-        para['messages'] = Message.objects.filter(show=True)[:30]
+        para['repeat'] = False
+        para['messages'] = Message.objects.filter(show=True)[:20]
+        try:
+            Message.objects.filter(show=True)[20]
+            para['more'] = True
+        except:pass
+    
         if request.method == 'POST':
             form = MessageForm(request.POST)
-            para['form']= form
+            para['form'] = form
             if form.is_valid():
                 content = form.cleaned_data['content']
                 name    = form.cleaned_data['name']

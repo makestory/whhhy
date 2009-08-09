@@ -29,10 +29,13 @@ $(".sure").click(function(){
         dataType:'xmlDoc',
         data:{pk:$(this).val()},
         success: function(xmlDoc){
-        $('.messages').after(xmlDoc);}})
+        $('.messages').after(xmlDoc);
+        count -=1}})
         $(this).parent().parent().remove();
         });
-$(".unsure").click(function(){$(this).parent().parent().slideUp()})
-});</script>
+$(".unsure").click(function(){$(this).parent().parent().slideUp()});
+count +=1
+});
+</script>
 {%endif%}
 {% include "errors.html" %}

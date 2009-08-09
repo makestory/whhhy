@@ -1,5 +1,5 @@
 div,ing,li,p,a,span,ul,body{padding:0;margin:0;}
-html{height:100%;font-family:微软雅黑;}
+html{height:100%;font-family:"WenQuanYi Zen Hei"；}
 .fixed{position:fixed;}
 body{background:#40d0d0;}
 
@@ -50,13 +50,14 @@ body{background:#40d0d0;}
 h4{margin:10px 0 10px 0;color:#606060;font-family:sans-serif;}
 .daily h2{margin:10px 0 10px;font-family:sans-serif;}
 .dailycontent{line-height:28px;margin-top:15px;border-top:solid 1px #808080;padding-top:20px;text-indent:2em}
+.dailycontent p{margin-bottom:10px;}
 .dailycontent a{text-decoration:none;color:#0066FF}
 
 .messages{background:url(/data/sugar.png);-background:#c0c0c0;margin-bottom:12px;width:646px;padding:10px;}
 .messages h3{margin:10px 20px 10px 10px;color:#303030;}
 
-.message{background:url(/data/sugar.png);margin-top:10px;padding:20px 20px 20px 20px;;width:606px;}
-.message span{}
+.message{background:url(/data/sugar.png);margin-top:10px;padding:20px 20px 20px 20px;width:606px;}
+.message a{text-decoration:none;color:#0066ff}
 .info{border-bottom:solid 1px #808080;height:40px;margin-bottom:10px;}
 .header{float:left;width:400px;font-size:15px;}
 .counter{float:right;width:200px;text-align:right}
@@ -75,6 +76,8 @@ h4{margin:10px 0 10px 0;color:#606060;font-family:sans-serif;}
 .delete_sure{width:626px;height:auto;background:#900000;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
 .sure{background:#b03030;width:60px;height:24px;border:none;color:white;cursor:pointer;}
 .unsure{background:#b03030;width:60px;height:24px;border:none;color:white;cursor:pointer;}
+#more{display:block;width:646px;height:44px;background:#40b0f6;color:white;text-align:center;line-height:44px;font-size:14px;margin-top:10px;padding:0;border:none;cursor:pointer;}
+
 
 #feedback{background:url(/data/sugar.png);padding:20px;width:626px;display:block;height:200px;}
 #id_content{font-size:16px;width:623px;height:125px;}

@@ -1,0 +1,36 @@
+{% for message in messages %}
+<div class="message" style="dispaly:none">
+    <div class="info">
+        <div class="header">
+        <p class="name">{{message.customer.name}} 说: </p>
+        <span class="time">{{message.date|date:"Y.n.j H:i"}}</span>
+        </div>
+        <div class="counter">
+             {%if message.at.date%}<span class="at"> 在<a href='{{message.at.url}}'>{{message.at.date|date:"y年n月j日"}}的日志</a>中</span>{%endif%} 
+        </div>
+    </div>
+    <div class="say">
+    <p>{{message.content|linebreaksbr}}</p>
+    </div>
+</div>
+{% endfor %}
+{% if more %}
+<button id='more' value="{{more}}">更多留言</button>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#feedback").submit(ajaxsend);
+    $('#more').click(function(){
+        $.ajax({
+        url:'/feedback/more/',
+        type: 'POST',
+        dataType:'xmlDoc',
+        data:{page:$("#more").val(),count:count},
+        success: function(xmlDoc){
+        $('#more').remove()
+        $('.messages').append(xmlDoc);
+        },
+        });
+    });
+    });
+</script>
+{%endif%}

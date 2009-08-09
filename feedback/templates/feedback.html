@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block ajax %}
 <script type="text/javascript">
+var count = 0
 function ajaxsend(){
     $('#error').remove(); 
     $.ajax({
@@ -15,10 +16,23 @@ function ajaxsend(){
         $('#sending').remove()
         },
         });
-        return false;};
+    return false;};
+
 $(document).ready(function(){
     $("#feedback").submit(ajaxsend);
-     });
+    $('#more').click(function(){
+        $.ajax({
+        url:'/feedback/more/',
+        type: 'POST',
+        dataType:'xmlDoc',
+        data:{page:$("#more").val(),count:count},
+        success: function(xmlDoc){
+        $('#more').remove()
+        $('.messages').append(xmlDoc);
+        },
+        });
+    });
+    });
 </script>
 {% endblock %}
 {%block page%}
@@ -39,15 +53,15 @@ $(document).ready(function(){
              {%if message.at.date%}<span class="at"> 在<a href='{{message.at.url}}'>{{message.at.date|date:"y年n月j日"}}的日志</a>中</span>{%endif%} 
         </div>
     </div>
-    
     <div class="say">
     <p>{{message.content|linebreaksbr}}</p>
-    
     </div>
 </div>
 {% endfor %}
+{% if more %}
+    <button id='more' value="1">更多留言</button>
+{%endif%}
 </div>
-
-    <div class="footer"></div>
+<div class="footer"></div>
 </div>
 {%endblock%}
