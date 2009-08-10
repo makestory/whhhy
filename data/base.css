@@ -44,12 +44,12 @@ body{background:#40d0d0;}
 #header h2{margin-left:20px;color:#303030}
 .cap{height:10px;}
 .daily{background:url(/data/salt.png);margin-bottom:12px;padding:20px 30px 20px 30px;width:606px;}
-.dailyheader{height:74px;}
+.dailyheader{height:68px;}
 .dailyheader h4{width:400px;float:left;}
 .dailyheader h5{width:100px;float:right;text-align:right;}
 .dailyheader a {text-decoration:none;color:black}
 .dailyheader a:hover{text-decoration:none;color:#0066FF}
-h4,h5{margin:10px 0 10px 0;color:#606060;font-family:sans-serif;}
+h4,h5{margin:5px 0;color:#606060;font-family:sans-serif;}
 .daily h2{margin:10px 0 10px;font-family:sans-serif;}
 .dailycontent{line-height:28px;margin-top:15px;border-top:solid 1px #808080;padding-top:20px;text-indent:2em}
 .dailycontent p{margin-bottom:10px;}
