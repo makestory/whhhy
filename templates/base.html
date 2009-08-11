@@ -26,27 +26,6 @@ body{height:100%;overflow:auto;}
 <script src="/data/base.js"  type="text/javascript"></script>
 <!--[if !IE]><!-->
 {% block ajax%}
-<script type="text/javascript">
-function ajaxsend(){
-    $('#error').remove(); 
-    $.ajax({
-        url:'/feedback/ajax/',
-        type: 'POST',
-        dataType:'xmlDoc',
-        data:{name:$("#id_name").val(),content:$("#id_content").val(),email:$("#id_email").val(),},
-        beforeSend:function(){$('.messages').append('<div id="sending"><p>正在发送……</p></div>');},
-        success: function(xmlDoc){
-        $('.messages').append(xmlDoc);
-        $('.message:last').animate({ height: 'show' });
-        $('#sending').remove()
-        },
-        });
-        return false;};
-        
-$(document).ready(function(){
-    $("#feedback").submit(ajaxsend);
-     });
-</script>
 {% endblock %}
 <!--<![endif]-->
 

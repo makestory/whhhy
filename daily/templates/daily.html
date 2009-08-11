@@ -1,11 +1,36 @@
-﻿{% extends "base.html" %}
+{% extends "base.html" %}
+
+{% block ajax%}
+<script type="text/javascript">
+function ajaxsend(){
+    $('#error').remove(); 
+    $.ajax({
+        url:'/feedback/ajax/',
+        type: 'POST',
+        dataType:'xmlDoc',
+        data:{name:$("#id_name").val(),content:$("#id_content").val(),email:$("#id_email").val(),},
+        beforeSend:function(){$('.messages').append('<div id="sending"><p>正在发送……</p></div>');},
+        success: function(xmlDoc){
+        $('.messages').append(xmlDoc);
+        $('.message:last').animate({ height: 'show' });
+        $('#sending').remove()
+        },
+        });
+        return false;};
+        
+$(document).ready(function(){
+    $("#feedback").submit(ajaxsend);
+     });
+</script>
+{% endblock %}
+
 {%block page%}
 <div id="page">
     <div class="cap"></div>
     <div class="daily">
     <div class="dailyheader">
     <h2>{{daily.title}}</h2>
-    <h4>{{daily.date|date:"Y年 n月 j日 l"}}</h3>
+    <h4>{{daily.date|date:"Y年 n月 j日 l"}}</h4>
     </div>
     <div class="dailycontent">
     {{daily.text|safe}}
@@ -22,7 +47,7 @@
   $('#m{{daily.date|date:"Y-m"}}').css('display','block');
   $('#rightbar').css('display','block');
     </script>
-
+ 
 <div class="messages">
     <h3>大家的留言</h3>
 {% for message in messages %}
@@ -38,15 +63,16 @@
     </div>
     <div class="say">
     <p>{{message.content|linebreaksbr}}</p>
+    {%if message.reply%}<span class＝"reply" >回复：{{message.reply}}</span>{%endif%}
     </div>
 </div>
 {% endfor %}
 </div>
-
+ 
 {% include "errors.html" %}
 {% include "form.html" %}
-
+ 
     <div class="footer"></div>
 </div>
-
+ 
 {%endblock%}

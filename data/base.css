@@ -68,6 +68,7 @@ h4,h5{margin:5px 0;color:#606060;font-family:sans-serif;}
 .say{font-size:16px;line-height:24px;padding:0 20px 0 20px;}
 .say a{text-decoration:none;}
 .say img {border:none}
+.reply{color:#0066FF;font-size:14px;}
 .at{font-size:12px;font-family:serif;padding:24px 10px 0 0;display:block}
 .at a{text-decoration:none;color:#0066ff}
 .delete{display:block;background:url('/data/delete.png');width:16px;height:16px;padding:0;border:0;margin-left:560px;cursor:pointer;}
