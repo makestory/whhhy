@@ -17,7 +17,7 @@ class HomeView(BaseView):
     
 
 def rss(request):
-    dailys = Daily.objects.filter(show=True).all()[:10]
+    dailys = Daily.objects.filter(show=True).all()[:7]
     response = render_to_response('rss.xml',{'dailys':dailys})
     response._headers =  {'content-type': ('Content-Type', 'text/xml; charset=UTF-8')}
     return response
