@@ -5,7 +5,7 @@ from views import HomeView
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'^rss/$','views.rss'),
+    (r'^rss.xml$','views.rss'),
     (r'^$',HomeView.homepage),
     (r'^data/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
     (r'^daily/', include('daily.urls')),
