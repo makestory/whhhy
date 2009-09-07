@@ -11,6 +11,7 @@
     </div>
     <div class="say">
     <p>{{message.content|linebreaksbr}}</p>
+    {%if message.reply%}<span class="reply" >回复：{{message.reply}}</span>{%endif%}
     </div>
 </div>
 {% endfor %}
