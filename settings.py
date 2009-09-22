@@ -1,10 +1,10 @@
 import os
 import socket
 
-if socket.gethostname() == 'noname':
-    DEBUG = TEMPLATE_DEBUG = True
-else:
+if socket.gethostname() == 'localhost.localdomain':
     DEBUG = TEMPLATE_DEBUG = False
+else:
+    DEBUG = TEMPLATE_DEBUG = True
 
 PATH = os.getcwd()
 

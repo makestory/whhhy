@@ -1,0 +1,5 @@
+whhhy.kpf
+whhhy.db
+*.pyc
+/data/static/*
+/data/wallpaper/*
