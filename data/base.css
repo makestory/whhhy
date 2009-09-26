@@ -7,8 +7,8 @@ body{background:#40d0d0;}
 #logo{margin-top:20px;border:none;margin-bottom:48px;}
 #menu{width:100%;margin-top:50px;}
 #menu li{width:100%;text-align:right;list-style:none;}
-#menu a{display:block;width:111px;height:30px;line-height:30px; color:white;text-decoration:none;padding-right:17px;cursor:pointer;}
-#menu a:hover{background:url(/data/snow.png);color:black;}
+.nav{display:block;width:111px;height:30px;line-height:30px; color:white;text-decoration:none;padding-right:17px;cursor:pointer;}
+.nav:hover{background:url(/data/snow.png);color:black;}
 #menu .select{background:url(/data/snow.png);color:black;}
 #menu .hover{background:url(/data/snow.png);color:black;}
 
@@ -38,6 +38,9 @@ body{background:#40d0d0;}
 .day a:hover{background:url(/data/snow.png);color:black;}
 .day a.select{background:url(/data/snow.png);color:black;}
 
+#rsslink{background:url(/data/rss.png);position:absolute;z-index:1;top:258px;left:58px;display:block;width:16px;height:16px;}
+#rsslink:hover{background:url(/data/rssblack.png);}
+
 #page{margin-left:300px;width:666px;height:auto;height:auto;top:0}
 
 #header{background:url(/data/salt.png);padding:5px}
@@ -48,7 +51,7 @@ body{background:#40d0d0;}
 .dailyheader h4{width:400px;float:left;}
 .dailyheader h5{width:100px;float:right;text-align:right;}
 .dailyheader a {text-decoration:none;color:black}
-.dailyheader a:hover{text-decoration:none;color:#0066FF}
+.dailyheader a:hover{color:#0066FF}
 h4,h5{margin:5px 0;color:#606060;font-family:sans-serif;}
 .daily h2{margin:10px 0 10px;font-family:sans-serif;}
 .dailycontent{line-height:28px;margin-top:15px;border-top:solid 1px #808080;padding-top:20px;text-indent:2em}
@@ -94,3 +97,4 @@ h4,h5{margin:5px 0;color:#606060;font-family:sans-serif;}
 #submit{float:right}
 
 .footer{height:15px;}
+

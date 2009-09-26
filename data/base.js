@@ -5,17 +5,21 @@ function hidemidbar(){hidebar('#midbar')};
 $(document).ready(function(){
     $("#daily ").click(
     function () {
-    if($('#daily').attr("class")=="hover select" || $('#daily').attr("class")=="select hover" ){window.location="/daily/"};
-    showbar('#midbar');
+    if($("#daily[class*='select']")[0]){window.location="/daily/"};
+    if($("#daily[class*='hover']")[0]){showbar('#midbar');
     $('#daily').addClass('select');
     $('#years .select').removeClass('select');
     $('.months').css('display','none');
     $('#yearbar a:last').addClass('select');
-    $('#monthbar ul:last').css('display','block');});
+    $('#monthbar ul:last').css('display','block');};});
     
     $("#daily").hover(
     function () {$(this).addClass("hover");},
     function () {$(this).removeClass("hover");});
+    
+    $("#rsslink").hover(
+    function () {$("#daily").removeClass("hover");},
+    function () {$("#daily").addClass("hover");});
     
     $(".month").hover(
     function () {$(this).addClass("hover");},
