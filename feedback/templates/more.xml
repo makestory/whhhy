@@ -19,19 +19,7 @@
 <button id='more' value="{{more}}">更多留言</button>
 <script type="text/javascript">
 $(document).ready(function(){
-    $("#feedback").submit(ajaxsend);
-    $('#more').click(function(){
-        $.ajax({
-        url:'/feedback/more/',
-        type: 'POST',
-        dataType:'xmlDoc',
-        data:{page:$("#more").val(),count:count},
-        success: function(xmlDoc){
-        $('#more').remove()
-        $('.messages').append(xmlDoc);
-        },
-        });
-    });
+    $('#more').click(more);
     });
 </script>
 {%endif%}
