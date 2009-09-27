@@ -38,8 +38,8 @@ body{background:#40d0d0;}
 .day a:hover{background:url(/data/snow.png);color:black;}
 .day a.select{background:url(/data/snow.png);color:black;}
 
-#rsslink{background:url(/data/rss.png);position:absolute;z-index:1;top:258px;left:58px;display:block;width:16px;height:16px;}
-#rsslink:hover{background:url(/data/rssblack.png);}
+#rsslink{background:url(/data/rss.png) no-repeat;background-position:100% 0;position:absolute;z-index:1;top:258px;left:58px;display:block;width:16px;height:16px;}
+#rsslink:hover{background-position:0px}
 
 #page{margin-left:300px;width:666px;height:auto;height:auto;top:0}
 
