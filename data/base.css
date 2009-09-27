@@ -41,7 +41,7 @@ body{background:#40d0d0;}
 #rsslink{background:url(/data/rss.png) no-repeat;background-position:100% 0;position:absolute;z-index:1;top:258px;left:58px;display:block;width:16px;height:16px;}
 #rsslink:hover{background-position:0px}
 
-#page{margin-left:300px;width:666px;height:auto;height:auto;top:0}
+#page{margin-left:290px;width:666px;height:auto;height:auto;top:0}
 
 #header{background:url(/data/salt.png);padding:5px}
 #header h2{margin-left:20px;color:#303030}
@@ -98,3 +98,7 @@ h4,h5{margin:5px 0;color:#606060;font-family:sans-serif;}
 
 .footer{height:15px;}
 
+.retract{background:url(/data/retract.png) no-repeat;}
+.spread{background:url(/data/spread.png) no-repeat;}
+#slider{display:block;width:50px;height:30px;top:0;left:966px;cursor:pointer}
+#slider:hover{background-position:100% 0;}

@@ -8,6 +8,7 @@ class HomeView(BaseView):
     @classmethod
     def homepage(cls,request):
         para = BaseView().para
+        para['home'] = True
         return render_to_response('base.html',para)
     
     @classmethod

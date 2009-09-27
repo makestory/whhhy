@@ -14,7 +14,7 @@
     *+html .pos{vertical-align: baseline}
 </style>
 <!--[if IE  ]>
-<style type="text/css">
+s<style type="text/css">
 html{overflow:hidden;}
 body{height:100%;overflow:auto;}
 .fixed{position:absolute;top:0;}
@@ -78,7 +78,13 @@ body{height:100%;overflow:auto;}
 {%block page%}
 {%endblock%}
 
-<div id="slider"></div>
+{%ifequal home True%}
+<a id="slider" class="fixed retract"></a>
+<script type="text/javascript">
+    $("#slider").toggle(function(){$('#slider').attr('class','fixed spread');$('#page').slideUp('normal');},
+                        function(){$('#slider').attr('class','fixed retract');$('#page').slideDown('normal');});
+</script>
+{%endifequal%}
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

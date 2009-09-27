@@ -15,5 +15,5 @@ class BaseView(object):
         'years':Daily.objects.filter(show=True).dates('date','year'),
         'months':Daily.objects.filter(show=True).dates('date','month','DESC'),
         'days':Daily.objects.filter(show=True).dates('date','day','DESC'),
-        'wallpaper':getwallpaper()}
+        'wallpaper':getwallpaper(),}
         return para
