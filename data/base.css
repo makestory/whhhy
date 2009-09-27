@@ -4,7 +4,7 @@ html{height:100%;font-family:WenQuanYi Zen Hei,微软雅黑;}
 body{background:#40d0d0;}
 
 #leftbar{background:url(/data/black.png);-background:black;width:128px;height:100%;color:white;left:30px;}
-#logo{margin-top:20px;border:none;margin-bottom:48px;}
+#logo{margin-top:20px;border:none;margin-bottom:48px;height:128px;width:128px;}
 #menu{width:100%;margin-top:50px;}
 #menu li{width:100%;text-align:right;list-style:none;}
 .nav{display:block;width:111px;height:30px;line-height:30px; color:white;text-decoration:none;padding-right:17px;cursor:pointer;}
@@ -53,7 +53,7 @@ body{background:#40d0d0;}
 .dailyheader a {text-decoration:none;color:black}
 .dailyheader a:hover{color:#0066FF}
 h4,h5{margin:5px 0;color:#606060;font-family:sans-serif;}
-.daily h2{margin:10px 0 10px;font-family:sans-serif;}
+.daily h2{margin:10px 0 10px;font-}
 .dailycontent{line-height:28px;margin-top:15px;border-top:solid 1px #808080;padding-top:20px;text-indent:2em}
 .dailycontent p{margin-bottom:10px;}
 .dailycontent a{text-decoration:none;color:#0066FF}
@@ -78,7 +78,7 @@ h4,h5{margin:5px 0;color:#606060;font-family:sans-serif;}
 
 #error{width:626px;height:auto;background:#900000;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
 .errorlist li{list-style-type:none}
-#sending{width:626px;height:auto;background:#10b010;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
+#sending,#loading{width:626px;height:auto;background:#10b010;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
 .delete_sure{width:626px;height:auto;background:#900000;padding:10px;color:white;text-align:center;font-size:14px;margin-top:10px;}
 .sure{background:#b03030;width:60px;height:24px;border:none;color:white;cursor:pointer;}
 .unsure{background:#b03030;width:60px;height:24px;border:none;color:white;cursor:pointer;}

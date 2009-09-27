@@ -21,13 +21,17 @@ function ajaxsend(){
 $(document).ready(function(){
     $("#feedback").submit(ajaxsend);
     $('#more').click(function(){
+        var page=parseInt($("#more").val())
         $.ajax({
         url:'/feedback/more/',
         type: 'POST',
         dataType:'xmlDoc',
-        data:{page:$("#more").val(),count:count},
+        data:{page:page,count:count},
+        beforeSend:function(){$('#more').remove();
+        if(page==5){$('.messages').append('<div id="sending"><p>你可真能翻啊</p></div>')}
+        else{$('.messages').append('<div id="sending"><p>正在读取……</p></div>');};},
         success: function(xmlDoc){
-        $('#more').remove()
+        $('#sending').remove();
         $('.messages').append(xmlDoc);
         },
         });
