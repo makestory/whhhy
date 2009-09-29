@@ -27,7 +27,7 @@ function more(){
         dataType:'xmlDoc',
         data:{page:page,count:count},
         beforeSend:function(){$('#more').remove();
-        if(page>5){$('.messages').append('<div id="loading"><p>你可真能翻啊</p></div>')}
+        if(page>5){$('.messages').append('<div id="loading"><p>我说你可真能翻啊（彩蛋）</p></div>')}
         else{$('.messages').append('<div id="loading"><p>正在读取……</p></div>');};},
         success: function(xmlDoc){
         $('#loading').remove();
