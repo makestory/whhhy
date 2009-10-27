@@ -1,7 +1,7 @@
 import os
 import socket
 
-if socket.gethostname() == 'localhost.localdomain':
+if socket.gethostname() == 'zaituu.com':
     DEBUG = TEMPLATE_DEBUG = False
 else:
     DEBUG = TEMPLATE_DEBUG = True
